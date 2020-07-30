@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Speech-to-text</title>
+</head>
+<body>
+    <div class="container cont">
+        <h1 class="text-center header font-weight-bold">SPEECH TO TEXT</h1>
+        <h1 id="no-browser-support">Sorry, Your Browser Doesn't Support this App</h1>
+
+        <div class="app">
+            <div class="form-group">
+                <textarea readonly id="textarea" rows="5" class="form-control" placeholder="The Transcript will appear here"></textarea>
+            </div>
+            
+            <div class="form-group row buttons">
+                <button id="start-record-btn" class="btn btn-outline-dark col-3">Start Recognition <strong>OR</strong> Start a new sentence</button>
+                <button id="pause-record-btn" class="btn btn-outline-danger col-3">Pause Recognition <strong>OR</strong> End sentence</button>
+                <button id="save-note-btn" class="btn btn-outline-success col-3" aria-label="With textarea">Save Speech</button>   
+            </div>
+
+            <h3 class="text-center font-weight-light" id="instructions">Press the <strong>Start Recognition</strong> button.</h3>
+
+            <h3 class="text-center">Saved Speeches</h3>
+            <div class="row">
+                <div class="col-2"></div>
+                <ul id="notes" class="text-center col-8">
+                <li>
+                    <p class="no-notes">You don't have any Speeches.</p>
+                </li>
+                </ul>
+                <div class="col-2"></div>
+            </div>
+            
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
