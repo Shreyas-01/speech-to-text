@@ -11,10 +11,6 @@ try {
     app.style.visibility = "none";
 }
 
-// const grammar = '#JSGF V1.0';
-// const speechRecognitionList = new SpeechGrammarList();
-// speechRecognitionList.addFromString(grammar, 1);
-// recognition.grammars = speechRecognitionList;
 const texts=document.getElementById("textarea");
 const instruction=document.getElementById("instructions");
 const startBtn=document.getElementById("start-record-btn");
@@ -29,7 +25,6 @@ renderSpeeches(Speeches);
 
 recognition.lang = 'en-US';
 recognition.continuous=true;
-// recognition.interimResults = true;
 
 //**********************API EVENTS*************************
 
@@ -44,7 +39,6 @@ recognition.onspeechend = function() {
         texts.innerText=content;
     }
     console.log("onspeechend activated");
-    // recognition.start();
 }
 
 recognition.onnomatch =() => {
@@ -62,6 +56,7 @@ recognition.onresult= (event) => {
     const transcript = event.results[cur][0].transcript;
     content+=transcript;
     texts.innerText=content;
+    // recognition.start();
 }
 
 recognition.onerror= () => {
@@ -72,7 +67,6 @@ recognition.onerror= () => {
 // **************************EVENTS**********************
 
 startBtn.addEventListener("click",() => {
-    // instruction.innerText="Speech recognition is activated";
     recognition.start();
 });
 
